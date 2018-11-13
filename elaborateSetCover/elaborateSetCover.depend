@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1542131330 source:c:\users\nicholas\documents\github\elaborate-set-cover\elaboratesetcover\subconjunto.cpp
+	"subconjunto.h"
+
+1542131133 c:\users\nicholas\documents\github\elaborate-set-cover\elaboratesetcover\subconjunto.h
+	<iostream>
+	<vector>
+
+1542131565 source:c:\users\nicholas\documents\github\elaborate-set-cover\elaboratesetcover\tratainput.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	"subconjunto.h"
+
+1542058050 source:c:\users\nicholas\documents\github\elaborate-set-cover\elaboratesetcover\main.cpp
+	<iostream>
+	"subconjunto.h"
+

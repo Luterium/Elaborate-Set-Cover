@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="main.cpp" />
+		<Unit filename="subconjunto.cpp" />
+		<Unit filename="subconjunto.h" />
+		<Unit filename="tratainput.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

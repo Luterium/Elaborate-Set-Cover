@@ -27,8 +27,16 @@ int Subset::getCurrentSize(){
 	return currentSize;
 }
 
+void Subset::setSubsetNumber(int i){
+	subsetNumber = i;
+}
+
+int Subset::getSubsetNumber(){
+	return subsetNumber;
+}
+
 void Subset::setElementos(vector <int> ele){
-    for(int i = 0; i < ele.size(); i++)
+    for(unsigned int i = 0; i < ele.size(); i++)
         elementos[i] = ele[i];
 }
 
@@ -54,4 +62,8 @@ int Subset::returnElement(int i){
 
 int Subset::returnElementSize(){
     return elementos.size();
+}
+
+float Subset::returnCurrentWeight(){
+    return weight/currentSize;
 }
