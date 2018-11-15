@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="scp.txt" />
 		<Unit filename="subconjunto.cpp" />
 		<Unit filename="subconjunto.h" />
 		<Unit filename="tratainput.cpp" />
