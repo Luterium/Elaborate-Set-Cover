@@ -6,12 +6,13 @@
 	<iostream>
 	<vector>
 
-1542295889 source:c:\users\nicholas\documents\github\elaborate-set-cover\elaboratesetcover\tratainput.cpp
+1542831490 source:c:\users\nicholas\documents\github\elaborate-set-cover\elaboratesetcover\tratainput.cpp
 	<iostream>
 	<fstream>
 	<vector>
 	<math.h>
 	"subconjunto.h"
+	<queue>
 
 1542294391 source:c:\users\nicholas\documents\github\elaborate-set-cover\elaboratesetcover\main.cpp
 	<iostream>
