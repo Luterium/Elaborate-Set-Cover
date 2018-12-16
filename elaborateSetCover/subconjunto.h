@@ -2,7 +2,8 @@
 #include <iostream>
 #include <vector>
 
-void trataInput();
+
+void trataInput(char inputName[]);
 using namespace std;
 
 class Subset{

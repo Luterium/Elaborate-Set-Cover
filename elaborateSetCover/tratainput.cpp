@@ -18,7 +18,6 @@ void DesceHeap(vector <Subset>& Subsets, int i, vector <int>& subsetsIndexes){
     unsigned int leftChild, rightChild;
     Subset aux;
     int menor;
-    // Laço de repetição
     leftChild  = 2*i+1;
     while(leftChild < Subsets.size()){
         leftChild  = 2*i+1;
@@ -100,11 +99,11 @@ void coverElements(vector <Subset>& Subsets, vector <int>& subsetsIndexes, vecto
     }
 }
 
-void trataInput(){
+void trataInput(char inputName[]){
     int n, m, auxWeight, auxQtdSubsets, auxSubset;
     int totalWeight = 0;
     ifstream inputSCP;
-    inputSCP.open("scp.txt");
+    inputSCP.open(inputName);
     inputSCP >> n >> m;
 
     int elementosDescobertosSize = n;
@@ -136,12 +135,12 @@ void trataInput(){
     while(elementosDescobertosSize){
         totalWeight += Subsets[0].getWeight();
         subconjuntosEscolhidos.push_back(Subsets[0].getSubsetNumber());
-        betterCoverElements(Subsets, subsetsIndexes, elementosCobertos, elementosDescobertosSize, elementos);
+        coverElements(Subsets, subsetsIndexes, elementosCobertos, elementosDescobertosSize, elementos);
     }
-    cout << "Total cover cost: " << totalWeight << endl << endl << "Subconjuntos escolhidos: ";
-    for(unsigned int i = 0; i < subconjuntosEscolhidos.size(); i++){
+    cout << "Total cover cost: " << totalWeight << endl;
+   /* for(unsigned int i = 0; i < subconjuntosEscolhidos.size(); i++){
         cout << subconjuntosEscolhidos[i]+1 << " ";
-    }
+    }*/
 
     inputSCP.close();
 }

@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1542131330 source:c:\users\nicholas\documents\github\elaborate-set-cover\elaboratesetcover\subconjunto.cpp
+1544834651 source:c:\users\nicholas\documents\github\elaborate-set-cover\elaboratesetcover\subconjunto.cpp
 	"subconjunto.h"
 
-1542131133 c:\users\nicholas\documents\github\elaborate-set-cover\elaboratesetcover\subconjunto.h
+1544835043 c:\users\nicholas\documents\github\elaborate-set-cover\elaboratesetcover\subconjunto.h
 	<iostream>
 	<vector>
 
-1542831490 source:c:\users\nicholas\documents\github\elaborate-set-cover\elaboratesetcover\tratainput.cpp
+1544835227 source:c:\users\nicholas\documents\github\elaborate-set-cover\elaboratesetcover\tratainput.cpp
 	<iostream>
 	<fstream>
 	<vector>
@@ -14,7 +14,8 @@
 	"subconjunto.h"
 	<queue>
 
-1542294391 source:c:\users\nicholas\documents\github\elaborate-set-cover\elaboratesetcover\main.cpp
+1544974545 source:c:\users\nicholas\documents\github\elaborate-set-cover\elaboratesetcover\main.cpp
 	<iostream>
 	"subconjunto.h"
+	<ctime>
 
