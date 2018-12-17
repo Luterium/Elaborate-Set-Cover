@@ -34,7 +34,7 @@ int main(int argc, char *argv[]){
 			clock_gettime(CLOCK_REALTIME, &finish);
 			timeSpent =  (finish.tv_sec - start.tv_sec);
 			timeSpent += (finish.tv_nsec - start.tv_nsec) / 1000000000.0;
-			cout << "Time spent: " << timeSpent << " seconds" << endl;
+			*cout << "Time spent: " << timeSpent << " seconds" << endl;
 
 			if(timeSpent > maxTime)
 				maxTime = timeSpent;

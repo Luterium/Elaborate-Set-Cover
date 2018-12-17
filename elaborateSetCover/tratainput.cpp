@@ -105,6 +105,8 @@ void trataInput(char inputName[]){
     ifstream inputSCP;
     inputSCP.open(inputName);
     inputSCP >> n >> m;
+    fstream costLog;
+    costLog.open("costLogComum.txt", std::fstream::in | std::fstream::out | std::fstream::app);
 
     int elementosDescobertosSize = n;
     vector <Subset> Subsets(m);
@@ -135,9 +137,10 @@ void trataInput(char inputName[]){
     while(elementosDescobertosSize){
         totalWeight += Subsets[0].getWeight();
         subconjuntosEscolhidos.push_back(Subsets[0].getSubsetNumber());
-        betterCoverElements(Subsets, subsetsIndexes, elementosCobertos, elementosDescobertosSize, elementos);
+        coverElements(Subsets, subsetsIndexes, elementosCobertos, elementosDescobertosSize, elementos);
     }
     cout << "Total cover cost: " << totalWeight << endl;
+    costLog << totalWeight << endl;
    /* for(unsigned int i = 0; i < subconjuntosEscolhidos.size(); i++){
         cout << subconjuntosEscolhidos[i]+1 << " ";
     }*/
