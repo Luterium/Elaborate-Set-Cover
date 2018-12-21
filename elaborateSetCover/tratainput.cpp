@@ -137,7 +137,7 @@ void trataInput(char inputName[]){
     while(elementosDescobertosSize){
         totalWeight += Subsets[0].getWeight();
         subconjuntosEscolhidos.push_back(Subsets[0].getSubsetNumber());
-        coverElements(Subsets, subsetsIndexes, elementosCobertos, elementosDescobertosSize, elementos);
+        betterCoverElements(Subsets, subsetsIndexes, elementosCobertos, elementosDescobertosSize, elementos);
     }
     cout << "Total cover cost: " << totalWeight << endl;
     costLog << totalWeight << endl;
