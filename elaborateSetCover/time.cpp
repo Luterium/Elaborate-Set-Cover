@@ -5,12 +5,19 @@
 #include <Windows.h>
 using namespace std;
 
+
 int main(int argc, char *argv[]){
 	std::string auxInputName;
 	ifstream inputName;
 	inputName.open("testCases.txt");
 	fstream timeLog;
+	fstream timeLogMin;
+	fstream timeLogMax;
+	fstream timeLogAvg;
 	timeLog.open("timeLogElaborate.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+	timeLogMin.open("timeLogElaborateMin.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+	timeLogMax.open("timeLogElaborateMax.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+	timeLogAvg.open("timeLogElaborateAvg.txt", std::fstream::in | std::fstream::out | std::fstream::app);
 	double timeSpent;
 	struct timespec start, finish;
 	double minTime = 1000;
@@ -34,15 +41,17 @@ int main(int argc, char *argv[]){
 			clock_gettime(CLOCK_REALTIME, &finish);
 			timeSpent =  (finish.tv_sec - start.tv_sec);
 			timeSpent += (finish.tv_nsec - start.tv_nsec) / 1000000000.0;
-			*cout << "Time spent: " << timeSpent << " seconds" << endl;
-
+			cout << "Time spent: " << timeSpent << " seconds" << endl;
 			if(timeSpent > maxTime)
 				maxTime = timeSpent;
-			else if(timeSpent < minTime)
+			if(timeSpent < minTime)
 				minTime = timeSpent;
 			timeLog << i << ": " << timeSpent << endl;
 			avgTime += timeSpent;
 		}
+		timeLogMin << minTime << endl;
+		timeLogAvg << avgTime/25 << endl;
+		timeLogMax << maxTime << endl;
 		timeLog << "Min: " << minTime << endl << "Max:" << maxTime << endl << "Avg:" << avgTime/25 << endl << endl;
 	}
 	return 0;

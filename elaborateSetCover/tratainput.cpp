@@ -25,13 +25,17 @@ void DesceHeap(vector <Subset>& Subsets, int i, vector <int>& subsetsIndexes){
 
         if((rightChild < Subsets.size()) && ((Subsets[i].returnCurrentWeight() > Subsets[rightChild].returnCurrentWeight()+EPS) ||
                                              (comparaFloats(Subsets[i].returnCurrentWeight(),Subsets[rightChild].returnCurrentWeight())
-                                              && Subsets[i].getCurrentSize() < Subsets[rightChild].getCurrentSize())))
+                                              && (Subsets[i].getCurrentSize() < Subsets[rightChild].getCurrentSize() || 
+                                                (Subsets[i].getCurrentSize() == Subsets[rightChild].getCurrentSize() && 
+                                                Subsets[i].getSubsetNumber() > Subsets[rightChild].getSubsetNumber())))))
              menor = rightChild;
         else menor = i;
 
         if((leftChild < Subsets.size()) && ((Subsets[menor].returnCurrentWeight() > Subsets[leftChild].returnCurrentWeight()+EPS) ||
                                             (comparaFloats(Subsets[menor].returnCurrentWeight(),Subsets[leftChild].returnCurrentWeight())
-                                             && Subsets[menor].getCurrentSize() < Subsets[leftChild].getCurrentSize())))
+                                             && (Subsets[menor].getCurrentSize() < Subsets[leftChild].getCurrentSize() || 
+                                                (Subsets[menor].getCurrentSize() == Subsets[leftChild].getCurrentSize() && 
+                                                Subsets[menor].getSubsetNumber() > Subsets[leftChild].getSubsetNumber())))))
             menor = leftChild;
 
         if (menor == i){
@@ -139,9 +143,9 @@ void trataInput(char inputName[]){
         subconjuntosEscolhidos.push_back(Subsets[0].getSubsetNumber());
         betterCoverElements(Subsets, subsetsIndexes, elementosCobertos, elementosDescobertosSize, elementos);
     }
-    cout << "Total cover cost: " << totalWeight << endl;
+    //cout << "Total cover cost: " << totalWeight << endl;
     costLog << totalWeight << endl;
-   /* for(unsigned int i = 0; i < subconjuntosEscolhidos.size(); i++){
+    /*for(unsigned int i = 0; i < subconjuntosEscolhidos.size(); i++){
         cout << subconjuntosEscolhidos[i]+1 << " ";
     }*/
 
