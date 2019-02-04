@@ -14,10 +14,10 @@ int main(int argc, char *argv[]){
 	fstream timeLogMin;
 	fstream timeLogMax;
 	fstream timeLogAvg;
-	timeLog.open("timeLogElaborate.txt", std::fstream::in | std::fstream::out | std::fstream::app);
-	timeLogMin.open("timeLogElaborateMin.txt", std::fstream::in | std::fstream::out | std::fstream::app);
-	timeLogMax.open("timeLogElaborateMax.txt", std::fstream::in | std::fstream::out | std::fstream::app);
-	timeLogAvg.open("timeLogElaborateAvg.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+	/*timeLog.open("timeLogComum.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+	timeLogMin.open("timeLogComumMin.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+	timeLogMax.open("timeLogComumMax.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+	timeLogAvg.open("timeLogComumAvg.txt", std::fstream::in | std::fstream::out | std::fstream::app);*/
 	double timeSpent;
 	struct timespec start, finish;
 	double minTime = 1000;
@@ -35,7 +35,7 @@ int main(int argc, char *argv[]){
 		minTime = 1000;
 		maxTime = 0;
 
-		for(int i = 0; i < 25; i++){
+		//for(int i = 0; i < 25; i++){
 			clock_gettime(CLOCK_REALTIME, &start);
 			int retCode = system(completeString.c_str());
 			clock_gettime(CLOCK_REALTIME, &finish);
@@ -46,13 +46,13 @@ int main(int argc, char *argv[]){
 				maxTime = timeSpent;
 			if(timeSpent < minTime)
 				minTime = timeSpent;
-			timeLog << i << ": " << timeSpent << endl;
+			//timeLog << i << ": " << timeSpent << endl;
 			avgTime += timeSpent;
-		}
-		timeLogMin << minTime << endl;
+		//}
+		/*timeLogMin << minTime << endl;
 		timeLogAvg << avgTime/25 << endl;
 		timeLogMax << maxTime << endl;
-		timeLog << "Min: " << minTime << endl << "Max:" << maxTime << endl << "Avg:" << avgTime/25 << endl << endl;
+		timeLog << "Min: " << minTime << endl << "Max:" << maxTime << endl << "Avg:" << avgTime/25 << endl << endl;*/
 	}
 	return 0;
 }

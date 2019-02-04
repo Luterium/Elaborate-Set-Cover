@@ -106,11 +106,23 @@ void coverElements(vector <Subset>& Subsets, vector <int>& subsetsIndexes, vecto
 void trataInput(char inputName[]){
     int n, m, auxWeight, auxQtdSubsets, auxSubset;
     int totalWeight = 0;
+    int counter = 0;
+
     ifstream inputSCP;
     inputSCP.open(inputName);
     inputSCP >> n >> m;
+
     fstream costLog;
     costLog.open("costLogComum.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+    fstream Elements;
+    Elements.open("elementsLog.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+    fstream SubsetsLog;
+    SubsetsLog.open("subsetsLog.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+    fstream Density;
+    Density.open("densityLog.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+
+    Elements << n << endl;
+    SubsetsLog << m << endl;
 
     int elementosDescobertosSize = n;
     vector <Subset> Subsets(m);
@@ -130,6 +142,7 @@ void trataInput(char inputName[]){
 
     for (int i = 0; i < n; i++){
         inputSCP >> auxQtdSubsets;
+        counter += auxQtdSubsets;
         for(int j = 0; j < auxQtdSubsets; j++){
             inputSCP >> auxSubset;
             elementos[i].push_back(auxSubset-1);
@@ -137,6 +150,9 @@ void trataInput(char inputName[]){
             Subsets[auxSubset-1].adicionaElemento(i);
         }
     }
+
+    Density << counter << endl;
+
     Heapify(Subsets, subsetsIndexes);
     while(elementosDescobertosSize){
         totalWeight += Subsets[0].getWeight();
